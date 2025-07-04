@@ -1,0 +1,10 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Ícone de pino de localização -->
+  <path d="M70 30C70 20.0589 78.0589 12 88 12C97.9411 12 106 20.0589 106 30C106 43 88 70 88 70C88 70 70 43 70 30Z" fill="#f2545b"/>
+  <circle cx="88" cy="30" r="6" fill="white"/>
+
+  <!-- Texto Turist -->
+  <text x="120" y="60" font-family="Montserrat, sans-serif" font-size="36" fill="#2e2e2e" font-weight="700">
+    Turist
+  </text>
+</svg>
