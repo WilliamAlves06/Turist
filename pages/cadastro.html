@@ -38,21 +38,21 @@
 
   <!-- FORMULÁRIO -->
   <div class="container mb-5">
-    <form id="meuformulario" class="row g-3 needs-validation" novalidate>
+    <form id="meuformulario" action="https://api.sheetmonkey.io/form/pQ2hcx3mNTcuD3FwjzDB2S" method="post" class="row g-3 needs-validation" novalidate>
       <!-- Nome e Sobrenome -->
       <div class="col-md-6">
         <label for="firstName" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Seu nome" required />
+        <input type="text" class="form-control" id="firstName" name="nome" placeholder="Seu nome" required />
       </div>
       <div class="col-md-6">
         <label for="lastName" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Seu sobrenome" required />
+        <input type="text" class="form-control" id="lastName" name="sobrenome" placeholder="Seu sobrenome" required />
       </div>
 
       <!-- E-mail -->
       <div class="col-12">
         <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="voce@exemplo.com" required />
+        <input type="email" class="form-control" id="email" name="email" placeholder="voce@exemplo.com" required />
       </div>
 
       <!-- Gênero -->
@@ -74,7 +74,7 @@
 
       <div class="col-12 text-center mt-4">
         <button type="submit" class="btn btn-primary px-4">
-          <i class="bi bi-person-plus-fill"></i> Cadastrar
+           Cadastrar
         </button>
       </div>
     </form>

@@ -1,47 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const formulario = document.getElementById('meuformulario');
+const addLoad = () =>{
+  const button = document.querySelector('button');
+  button.innerHTML = '<i class="bi bi-patch-check"></i>';
+}
 
-  if (formulario) {
-    formulario.addEventListener('submit', function (event) {
-      event.preventDefault();
+addLoad();
 
-      const nome = document.getElementById('firstName').value;
-      const sobrenome = document.getElementById('lastName').value;
-      const email = document.getElementById('email').value;
-      const genero = document.querySelector('input[name="gender"]:checked')?.value;
+const handleSubmit = (Event) =>{
+  Event.preventDefault();
 
-      // Validação básica
-      if (!nome || !sobrenome || !email || !genero) {
-        alert("Por favor, preencha todos os campos!");
-        return;
-      }
+const nome = document.querySelector('input[name=nome').value;
+const sobrenome = document.querySelector('input[name=sobrenome').value;
+const email = document.querySelector('input[name=email').value;
+const gender = document.querySelector('input[name=gender').value;
 
-      const dados = {
-        nome,
-        sobrenome,
-        email,
-        genero
-      };
+  fetch('https://api.sheetmonkey.io/form/pQ2hcx3mNTcuD3FwjzDB2S',{
+    method: 'post',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({nome, sobrenome, email, gender}),
+  });
+}
 
-      fetch('https://script.google.com/macros/s/AKfycbxalhen0nPfvc42uVuXV4dTlLn08sHaMU0K8YAl1MabPLYcCNLcg9hHYgqhz1reeVoQ/exec', {
-        method: 'POST',
-        body: JSON.stringify(dados),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          alert("Dados enviados com sucesso!");
-          formulario.reset();
-        } else {
-          alert("Erro ao enviar os dados.");
-        }
-      })
-      .catch(error => {
-        console.error("Erro:", error);
-        alert("Erro na conexão.");
-      });
-    });
-  }
-});
+document.getElementById('meuformulario').addEventListener('submit', handleSubmit);
